@@ -28,21 +28,35 @@ artists.forEach(artist => {
 
   return (
     <div>
-      <h2>Popular Artists</h2>
+      <h2 className="section-title">Popular Artists</h2>
 
-      {artists.map(a => (
-        <Link key={a.id} to={`/artist/${a.id}`}>
-          <div>{a.name}</div>
-        </Link>
-      ))}
-      <h3>Popular Genres</h3>
+      <div className="artists-grid">
+  {artists.map(artist => (
+    <Link
+      to={`/artist/${artist.id}`}
+      key={artist.id}
+      className="artist-card"
+    >
+      <img
+        src={artist.images[0]?.url}
+        alt={artist.name}
+        className="artist-image"
+      />
+
+      <h4 className="artist-name">{artist.name}</h4>
+    </Link>
+  ))}
+</div>
+
+      <h3 className="section-title">Popular Genres</h3>
 
 <div>
+  <div className="country-genres">
   {Object.keys(genreCount).map(g => (
-    <span key={g} style={{ marginRight: "8px" }}>
-      {g}
-    </span>
+    <span key={g}>{g}</span>
   ))}
+</div>
+
 </div>
 
     </div>

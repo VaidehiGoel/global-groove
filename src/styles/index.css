@@ -178,3 +178,90 @@ p {
   background-color: var(--primary);
   color: black;
 }
+/* ===== COUNTRY PAGE ===== */
+
+.country-page h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  color: #ffffff;
+}
+
+/* ARTIST GRID */
+.artists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 260px));
+  gap: 32px;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+/* ARTIST CARD */
+.artist-card {
+  background: linear-gradient(180deg, #1db954, #121212);
+  border-radius: 20px;
+  padding: 16px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artist-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(29, 185, 84, 0.35);
+}
+
+/* ARTIST IMAGE */
+.artist-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 12px;
+}
+
+/* ARTIST NAME */
+.artist-name {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+/* ===== SECTION TITLES (e.g. Popular Artists) ===== */
+.section-title {
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 40px 0 32px;
+
+  /* Softer gradient than artist name */
+  background: linear-gradient(
+    90deg,
+    #1db954,
+    #9dffbf
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  /* Subtle glow */
+  text-shadow:
+    0 0 12px rgba(29, 185, 84, 0.25),
+    0 0 24px rgba(29, 185, 84, 0.12);
+}
+
+/* GENRES SECTION */
+.country-genres {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.country-genres span {
+  background: rgba(29, 185, 84, 0.15);
+  color: #1db954;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-family: "Courier New", monospace;
+}
