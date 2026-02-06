@@ -385,3 +385,37 @@ p {
   max-width: 1200px;
   width: 100%;
 }
+/* ===== MAP STYLES ===== */
+.map-container {
+  animation: breathe 6s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.map-container path {
+  fill: #e5e5e5; /* light default */
+  stroke: rgba(255, 255, 255, 0.15);
+  stroke-width: 0.5;
+  transition:
+    fill 0.25s ease,
+    filter 0.25s ease,
+    transform 0.15s ease;
+}
+
+/* Hover effect */
+
+.map-container path:hover {
+  fill: #1db954;
+  cursor: pointer;
+  filter: drop-shadow(0 0 6px rgba(29, 185, 84, 0.6));
+  transform: scale(1.01);
+
+}
+

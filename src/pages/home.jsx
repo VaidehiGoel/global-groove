@@ -6,7 +6,7 @@ function Home() {
       <div className="page-content">
         <h1 className="home-title">Global Groove</h1>
         <p className="home-subtitle">
-          This is exploration, not recommendation.
+          Music Beyond Borders. Explore the world’s top artists and genres by country. Click on a country to discover its unique musical landscape and find your next favorite artist!!
         </p>
       </div>
 

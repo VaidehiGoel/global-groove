@@ -9,6 +9,8 @@ function WorldMap() {
     if (countryCode) {
       navigate(`/country/${countryCode}`);
     }
+    if (!path.dataset.code) return;
+
   }
 
   return (
