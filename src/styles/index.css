@@ -87,12 +87,31 @@ p {
 
 .artist-genres span {
   background: rgba(29, 185, 84, 0.15);
-  color: var(--primary);
+  color: #1db954;
   padding: 6px 14px;
   border-radius: 999px;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.5px;
+  cursor: default;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* ===== HOVER EFFECT ===== */
+.artist-genres span:hover {
+  background: #1db954;
+  color: #000000;
+
+  box-shadow:
+    0 0 12px rgba(29, 185, 84, 0.6),
+    0 0 24px rgba(29, 185, 84, 0.35);
+
+  transform: translateY(-2px);
 }
 
 /* ===== FAVORITE BUTTON ===== */
@@ -228,6 +247,7 @@ p {
 }
 /* ===== SECTION TITLES (e.g. Popular Artists) ===== */
 .section-title {
+  text-align:center;
   font-size: clamp(2rem, 3.5vw, 2.6rem);
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -264,4 +284,24 @@ p {
   border-radius: 999px;
   font-size: 13px;
   font-family: "Courier New", monospace;
+  cursor: default;
+
+  transition: 
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
 }
+
+/* ===== HOVER EFFECT ===== */
+.country-genres span:hover {
+  background: #1db954;
+  color: #000000;
+
+  box-shadow:
+    0 0 12px rgba(29, 185, 84, 0.6),
+    0 0 24px rgba(29, 185, 84, 0.35);
+
+  transform: translateY(-2px);
+}
+
