@@ -5,7 +5,7 @@ function Favorites() {
     JSON.parse(localStorage.getItem("favorites")) || [];
 
   return (
-    <div className="favorites-page">
+    <div className="favorites-page page">
       <div className="page-content">
         <h1 className="section-title">Your Favourites</h1>
 

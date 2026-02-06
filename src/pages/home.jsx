@@ -2,7 +2,7 @@ import WorldMap from "../components/worldmap";
 
 function Home() {
   return (
-    <div className="home-page">
+    <div className="home-page page">
       <div className="page-content">
         <h1 className="home-title">Global Groove</h1>
         <p className="home-subtitle">

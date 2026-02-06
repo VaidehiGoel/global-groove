@@ -259,11 +259,7 @@ p {
 }
 /* ===== COUNTRY PAGE ===== */
 
-.country-page h2 {
-  font-size: 2rem;
-  margin-bottom: 24px;
-  color: #ffffff;
-}
+
 
 /* ARTIST GRID */
 .artists-grid {
@@ -417,5 +413,19 @@ p {
   filter: drop-shadow(0 0 6px rgba(29, 185, 84, 0.6));
   transform: scale(1.01);
 
+}
+/* ===== PAGE TRANSITION ===== */
+
+.page {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: pageFadeIn 0.45s ease forwards;
+}
+
+@keyframes pageFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 

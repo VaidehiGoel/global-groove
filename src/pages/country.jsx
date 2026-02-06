@@ -29,8 +29,8 @@ artists.forEach(artist => {
 });
 
   return (
-    <div>
-        <h1></h1>
+    <div className="country-page page">
+      
       <h2 className="section-title">Popular Artists</h2>
 
       <div className="artists-grid">

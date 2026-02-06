@@ -46,7 +46,7 @@ function Artist() {
   }
 
   return (
-    <div className="artist-page">
+    <div className="artist-page page">
         <div className="page-content">
       <div className="artist-header">
         <h1>{artist.name}</h1>
