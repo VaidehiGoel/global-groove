@@ -30,10 +30,28 @@ function Artist() {
 
   if (!artist) return <p>Loading artist…</p>;
 
+function addToFavorites() {
+  const existing =
+    JSON.parse(localStorage.getItem("favorites")) || [];
+
+  // prevent duplicates
+  if (existing.find(a => a.id === artist.id)) return;
+
+  localStorage.setItem(
+    "favorites",
+    JSON.stringify([...existing, artist])
+  );
+
+  alert("Added to favourites!");
+}
+
   return (
     <div>
       <h1>{artist.name}</h1>
       <p>{artist.genres.join(", ")}</p>
+        <button onClick={addToFavorites}>
+  ❤️ Add to Favourites
+</button>
 
       <h3>Top Tracks</h3>
       {tracks.map(track => (
