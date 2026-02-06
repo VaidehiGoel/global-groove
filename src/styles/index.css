@@ -248,26 +248,28 @@ p {
 /* ===== SECTION TITLES (e.g. Popular Artists) ===== */
 .section-title {
   text-align:center;
-  font-size: clamp(2rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin: 40px 0 32px;
+  font-size: clamp(2.8rem, 5vw, 3.6rem); /* responsive & bold */
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 18px;
 
-  /* Softer gradient than artist name */
+  /* Gradient text */
   background: linear-gradient(
     90deg,
     #1db954,
-    #9dffbf
+    #6bff9a,
+    #1db954
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 
-  /* Subtle glow */
+  /* Subtle glow for dark background */
   text-shadow:
-    0 0 12px rgba(29, 185, 84, 0.25),
-    0 0 24px rgba(29, 185, 84, 0.12);
+    0 0 18px rgba(29, 185, 84, 0.35),
+    0 0 36px rgba(29, 185, 84, 0.15);
 }
+
 
 /* GENRES SECTION */
 .country-genres {
