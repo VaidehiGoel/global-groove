@@ -1,6 +1,8 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getToken, fetchArtistsByCountry } from "../services/spotify";
+import { useLocation } from "react-router-dom";
+
 
 function Country() {
   const { code } = useParams();
@@ -28,6 +30,7 @@ artists.forEach(artist => {
 
   return (
     <div>
+        <h1></h1>
       <h2 className="section-title">Popular Artists</h2>
 
       <div className="artists-grid">
