@@ -18,6 +18,13 @@ function Country() {
   }, [code]);
 
   if (loading) return <p>Loading artists…</p>;
+const genreCount = {};
+
+artists.forEach(artist => {
+  artist.genres.forEach(genre => {
+    genreCount[genre] = (genreCount[genre] || 0) + 1;
+  });
+});
 
   return (
     <div>
@@ -28,7 +35,19 @@ function Country() {
           <div>{a.name}</div>
         </Link>
       ))}
+      <h3>Popular Genres</h3>
+
+<div>
+  {Object.keys(genreCount).map(g => (
+    <span key={g} style={{ marginRight: "8px" }}>
+      {g}
+    </span>
+  ))}
+</div>
+
     </div>
+    
+    
   );
 }
 
