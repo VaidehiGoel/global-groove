@@ -30,38 +30,71 @@ function Artist() {
 
   if (!artist) return <p>Loading artist…</p>;
 
-function addToFavorites() {
-  const existing =
-    JSON.parse(localStorage.getItem("favorites")) || [];
+  function addToFavorites() {
+    const existing =
+      JSON.parse(localStorage.getItem("favorites")) || [];
 
-  // prevent duplicates
-  if (existing.find(a => a.id === artist.id)) return;
+    // prevent duplicates
+    if (existing.find(a => a.id === artist.id)) return;
 
-  localStorage.setItem(
-    "favorites",
-    JSON.stringify([...existing, artist])
-  );
+    localStorage.setItem(
+      "favorites",
+      JSON.stringify([...existing, artist])
+    );
 
-  alert("Added to favourites!");
-}
+    alert("Added to favourites!");
+  }
 
   return (
-    <div>
-      <h1>{artist.name}</h1>
-      <p>{artist.genres.join(", ")}</p>
-        <button onClick={addToFavorites}>
-  ❤️ Add to Favourites
-</button>
+    <div className="artist-page">
+        <div className="page-content">
+      <div className="artist-header">
+        <h1>{artist.name}</h1>
+        <div className="artist-genres">
+  {artist.genres.map(g => (
+    <span key={g}>{g}</span>
+  ))}
+  </div>
+</div>
 
-      <h3>Top Tracks</h3>
-      {tracks.map(track => (
-        <div key={track.id}>
-          <p>{track.name}</p>
-          {track.preview_url && (
-            <audio controls src={track.preview_url} />
-          )}
-        </div>
-      ))}
+
+        <button className="favorite-button" onClick={addToFavorites}>
+          ❤️ Add to Favourites
+        </button>
+      </div>
+
+      <h3 className="tracks-heading">Top Tracks</h3>
+
+      <div className="tracks-grid">
+        {tracks.map(track => (
+          <div className="track-card" key={track.id}>
+            <img
+              src={track.album.images[0]?.url}
+              alt={track.name}
+              className="track-image"
+            />
+
+            <h4 className="track-title">{track.name}</h4>
+
+            <p className="track-date">
+              Release Date: {track.album.release_date}
+            </p>
+
+            {track.preview_url && (
+              <audio controls src={track.preview_url} />
+            )}
+
+            <a
+              href={track.external_urls.spotify}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="spotify-button"
+            >
+              Open in Spotify
+            </a>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
