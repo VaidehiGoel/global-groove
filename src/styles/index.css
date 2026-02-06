@@ -365,3 +365,23 @@ p {
   transform: translateY(-2px);
 }
 
+/* ===== HOME PAGE ===== */
+
+
+.home-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.map-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+
+.map-section svg {
+  max-width: 1200px;
+  width: 100%;
+}
