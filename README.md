@@ -90,11 +90,11 @@ API logic is isolated inside `services/spotify.js`.
 ## 🚀 Running the Project Locally
 
 1. Clone the repository
--git clone https://github.com/your-username/global-groove.git
+- git clone https://github.com/your-username/global-groove.git
 2. Install dependencies
--npm install
+- npm install
 3. Start the development server
--npm run dev
+- npm run dev
 4. Open in browser
 - http://localhost:5173
 
