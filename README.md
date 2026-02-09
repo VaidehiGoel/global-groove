@@ -48,6 +48,7 @@
 ---
 
 ## 📁 Project Structure
+```
 global-groove/
 ├── public/ # Static assets
 ├── src/
@@ -71,7 +72,7 @@ global-groove/
 ├── vite.config.js # Vite configuration
 ├── package.json # Dependencies and scripts
 └── index.html # HTML template
-
+```
 ---
 
 ## 🔑 Spotify API Usage
