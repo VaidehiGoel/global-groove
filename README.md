@@ -101,7 +101,7 @@ http://localhost:5173
 
 ## 👩‍💻 Author
 
-Vaidehi Goel
+Vaidehi Goel  
 Computer Science Engineering Student
 
 This project was built to showcase frontend development skills, including UI design, React fundamentals, API integration, and thoughtful UX design.
