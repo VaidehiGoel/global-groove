@@ -1,4 +1,33 @@
-/* ===== NAVBAR ===== */
+
+/* ===================== GLOBAL RESET ====================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===================== ROOT THEME ======================== */
+
+:root {
+  --bg: #000000;
+  --text: #ffffff;
+  --primary: #1db954;
+  --muted: rgba(255, 255, 255, 0.7);
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* ======================== BODY =========================== */
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+/* ======================= NAVBAR ========================== */
+
 .navbar {
   width: 100%;
   height: 64px;
@@ -43,7 +72,7 @@
 }
 
 .nav-link.active {
-  color: #1db954;
+  color: var(--primary);
 }
 
 .nav-link.active::after {
@@ -53,35 +82,12 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background: #1db954;
+  background: var(--primary);
   border-radius: 2px;
 }
 
-/* ===== GLOBAL RESET ===== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* ===================== PAGE LAYOUT ======================= */
 
-/* ===== ROOT THEME ===== */
-:root {
-  --bg: #000000;
-  --text: #ffffff;
-  --primary: #1db954;
-  --muted: rgba(255, 255, 255, 0.7);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-}
-
-/* ===== BODY ===== */
-body {
-  background-color: var(--bg);
-  color: var(--text);
-  min-height: 100vh;
-}
-
-/* ===== PAGE LAYOUT ===== */
 .artist-page,
 .country-page,
 .home-page,
@@ -92,38 +98,44 @@ body {
   text-align: center;
 }
 
-/* ===== INNER CONTENT (HEADERS) ===== */
 .page-content {
   max-width: 1400px;
   margin: 0 auto;
 }
 
-/* ===== TYPOGRAPHY ===== */
-/* ===== ARTIST NAME (HERO TEXT) ===== */
+/* ====================== TYPOGRAPHY ======================= */
+
 h1 {
-  text-align:center;
-  font-size: clamp(3.5rem, 5.7vw, 4.3rem); /* responsive & bold */
+  text-align: center;
+  font-size: clamp(3.5rem, 5.7vw, 4.3rem);
   font-weight: 800;
   letter-spacing: -0.03em;
   margin-bottom: 18px;
 
-  /* Gradient text */
-  background: linear-gradient(
-    90deg,
-    #1db954,
-    #6bff9a,
-    #1db954
-  );
+  background: linear-gradient(90deg, #1db954, #6bff9a, #1db954);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
 
-  /* Subtle glow for dark background */
   text-shadow:
     0 0 18px rgba(29, 185, 84, 0.35),
     0 0 36px rgba(29, 185, 84, 0.15);
 }
 
+.section-title {
+  text-align: center;
+  font-size: clamp(2.8rem, 5vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 40px 0 24px;
+
+  background: linear-gradient(90deg, #1db954, #6bff9a, #1db954);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 0 18px rgba(29, 185, 84, 0.35),
+    0 0 36px rgba(29, 185, 84, 0.15);
+}
 
 h2,
 h3 {
@@ -135,24 +147,25 @@ p {
   margin-bottom: 12px;
 }
 
-/* ===== GENRE TAGS ===== */
-.artist-genres {
+/* ====================== GENRE TAGS ======================= */
+
+.artist-genres,
+.country-genres {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   font-family: "Courier New", monospace;
 }
 
-.artist-genres span {
+.artist-genres span,
+.country-genres span {
   background: rgba(29, 185, 84, 0.15);
-  color: #1db954;
+  color: var(--primary);
   padding: 6px 14px;
   border-radius: 999px;
   font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
   cursor: default;
 
   transition:
@@ -162,10 +175,10 @@ p {
     transform 0.25s ease;
 }
 
-/* ===== HOVER EFFECT ===== */
-.artist-genres span:hover {
-  background: #1db954;
-  color: #000000;
+.artist-genres span:hover,
+.country-genres span:hover {
+  background: var(--primary);
+  color: #000;
 
   box-shadow:
     0 0 12px rgba(29, 185, 84, 0.6),
@@ -174,7 +187,8 @@ p {
   transform: translateY(-2px);
 }
 
-/* ===== FAVORITE BUTTON ===== */
+/* ======================= BUTTONS ========================= */
+
 .favorite-button {
   margin: 16px auto 24px;
   padding: 10px 20px;
@@ -191,56 +205,6 @@ p {
   background: #17a74a;
 }
 
-/* ===== TRACKS SECTION ===== */
-.tracks-section {
-  width: 100%;
-  padding: 0 40px 40px;
-}
-
-/* ===== TRACK GRID ===== */
-.tracks-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
-  gap: 32px;
-  justify-content: center;
-  margin-top: 32px;
-}
-
-/* ===== TRACK CARD ===== */
-.track-card {
-  background: linear-gradient(180deg, #1db954, #121212);
-  border-radius: 20px;
-  padding: 16px;
-  color: white;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.track-card:hover {
-  transform: translateY(-6px);
-}
-
-/* ===== TRACK IMAGE ===== */
-.track-image {
-  width: 100%;
-  border-radius: 14px;
-  margin-bottom: 12px;
-}
-
-/* ===== TRACK TEXT ===== */
-.track-title {
-  font-size: 16px;
-  font-weight: 600;
-  margin: 8px 0;
-}
-
-.track-date {
-  font-size: 13px;
-  opacity: 0.8;
-  margin-bottom: 10px;
-}
-
-/* ===== SPOTIFY BUTTON ===== */
 .spotify-button {
   display: inline-block;
   margin-top: 10px;
@@ -257,11 +221,9 @@ p {
   background-color: var(--primary);
   color: black;
 }
-/* ===== COUNTRY PAGE ===== */
 
+/* ======================== GRIDS ========================== */
 
-
-/* ARTIST GRID */
 .artists-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 260px));
@@ -270,24 +232,38 @@ p {
   margin-bottom: 48px;
 }
 
-/* ARTIST CARD */
-.artist-card {
+.tracks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
+  gap: 32px;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+/* ======================== CARDS ========================== */
+.artist-card,
+.track-card {
   background: linear-gradient(180deg, #1db954, #121212);
   border-radius: 20px;
   padding: 16px;
   text-align: center;
   text-decoration: none;
   color: white;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.artist-card:hover {
+.artist-card:hover,
+.track-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 40px rgba(29, 185, 84, 0.35);
 }
 
-/* ARTIST IMAGE */
-.artist-image {
+/* ======================== IMAGES ========================= */
+.artist-image,
+.track-image {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
@@ -295,108 +271,19 @@ p {
   margin-bottom: 12px;
 }
 
-/* ARTIST NAME */
-.artist-name {
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 0.2px;
-}
-/* ===== SECTION TITLES (e.g. Popular Artists) ===== */
-.section-title {
-  text-align:center;
-  font-size: clamp(2.8rem, 5vw, 3.6rem); /* responsive & bold */
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  margin-bottom: 18px;
+/* ======================== MAP ============================ */
 
-  /* Gradient text */
-  background: linear-gradient(
-    90deg,
-    #1db954,
-    #6bff9a,
-    #1db954
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-
-  /* Subtle glow for dark background */
-  text-shadow:
-    0 0 18px rgba(29, 185, 84, 0.35),
-    0 0 36px rgba(29, 185, 84, 0.15);
-}
-
-.country-genres {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-.country-genres span {
-  background: rgba(29, 185, 84, 0.15);
-  color: #1db954;
-  padding: 6px 14px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-family: "Courier New", monospace;
-  cursor: default;
-
-  transition: 
-    background 0.25s ease,
-    color 0.25s ease,
-    box-shadow 0.25s ease,
-    transform 0.25s ease;
-}
-
-/* ===== HOVER EFFECT ===== */
-.country-genres span:hover {
-  background: #1db954;
-  color: #000000;
-
-  box-shadow:
-    0 0 12px rgba(29, 185, 84, 0.6),
-    0 0 24px rgba(29, 185, 84, 0.35);
-
-  transform: translateY(-2px);
-}
-
-/* ===== HOME PAGE ===== */
-
-
-.home-subtitle {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 1.1rem;
-  margin-bottom: 40px;
-}
-
-.map-section {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding-bottom: 40px;
-}
-
-.map-section svg {
-  max-width: 1200px;
-  width: 100%;
-}
-/* ===== MAP STYLES ===== */
 .map-container {
   animation: breathe 6s ease-in-out infinite;
 }
 
 @keyframes breathe {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.02);
-  }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
 }
 
 .map-container path {
-  fill: #e5e5e5; /* light default */
+  fill: #e5e5e5;
   stroke: rgba(255, 255, 255, 0.15);
   stroke-width: 0.5;
   transition:
@@ -405,16 +292,14 @@ p {
     transform 0.15s ease;
 }
 
-/* Hover effect */
-
 .map-container path:hover {
-  fill: #1db954;
+  fill: var(--primary);
   cursor: pointer;
   filter: drop-shadow(0 0 6px rgba(29, 185, 84, 0.6));
   transform: scale(1.01);
-
 }
-/* ===== PAGE TRANSITION ===== */
+
+/* =================== PAGE TRANSITION ===================== */
 
 .page {
   opacity: 0;
@@ -428,4 +313,3 @@ p {
     transform: translateY(0);
   }
 }
-
